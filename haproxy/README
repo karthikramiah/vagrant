@@ -1,0 +1,38 @@
+Pre-requisites:
+---------------
+
+1. Install Oracle VirtualBox
+2. Install Vagrant
+
+Procedure:
+----------
+
+1. Clone this git repo
+
+git clone https://github.com/karthikramiah/vagrant.git
+
+2. Change directory to haproxy
+
+cd haproxy
+
+3. Launch the VM's using the below command
+
+vagrant up --provision
+
+4. Once the boxes are up you will be haveing 3 VM's - 2 webservers running apache and 1 HAProxy sevrer for load balancing. You can access the webpages using the eblow URL's
+
+Webserver1 - http://192.168.50.10/
+Webserver2 - http://192.168.50.20/
+HAProxy (Loadbalanced) - http://192.168.50.30/ -- Please refresh the page to see the responses from the both the servers
+HAProxy Stats - http://192.168.50.30/haproxy?stats
+
+5. Halt one of the Webservers using the below command:
+
+vagrant halt webserver1
+
+Then hit the HAProxy Loadbalanced IP to see that all the request is being served by a the lone webserver.
+
+6. Destroy all the VM's using the below command
+
+vagrant destroy
+
