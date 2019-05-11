@@ -13,7 +13,7 @@ git clone https://github.com/karthikramiah/vagrant.git
 
 2. Change directory to haproxy
 
-cd haproxy
+cd vagrant/haproxy
 
 3. Launch the VM's using the below command
 
